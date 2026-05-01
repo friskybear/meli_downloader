@@ -1,0 +1,36 @@
+name: sort files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Group split zip files into subfolders
+        run: |
+          cd downloads || exit 0
+
+          # Get all unique base names (strip .zip / .z01 .z02 ...)
+          declare -A bases
+          for file in *; do
+            if [[ -f "$file" ]]; then
+              base=$(echo "$file" | sed -E 's/\.(zip|z[0-9]{2})$//')
+              if [[ "$base" != "$file" ]]; then
+                bases["$base"]=1
+              fi
+            fi
+          done
+
+          # Move each group into its own folder
+          for base in "${!bases[@]}"; do
+            echo "📁 Creating folder: $base"
+            mkdir -p "$base"
+            mv "$base".* "$base"/ 2>/dev/null && echo "   Moved files starting with $base.*" || echo "   No files found for $base"
+          done
+
+          if [[ ${#bases[@]} -eq 0 ]]; then
+            echo "No split zip files found in downloads/ folder."
+          fi
