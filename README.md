@@ -57,7 +57,9 @@
 ---
 
 > راه های تکراری نتایج جدید رقم نمیزند. برای نتیجه ای جدید باید راهی جدید امتحان کرد
-
+- ❤️ برای ادامه ی این مسیر و نوشتن پروژه های این چنینی نیاز به حمایت داریم .
+<a href="https://pay.avasam.ir/link/768981" target="_blank" rel="do-follow follow sponsered"> لینک حمایت مالی </a>
+ 
 # <a href="https://avasam.ir/post/get-files-by-github" target="_blank" rel="do-follow follow sponsered">🔗 آموزش ویدیویی استفاده از این ابزار </a>
 
 برای دریافت آموزش های بیشتر در پیام رسان بله عضو کانال ما باشید :‌
